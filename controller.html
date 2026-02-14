@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Controller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div class="main-layout">
+        <div class="joystick-container">
+            <div class="joystick" id="joystick-left">
+                <div class="stick"></div>
+            </div>
+            <div class="label">Throttle / Yaw</div>
+        </div>
+
+        <div class="center-console">
+            <h1>Drone Controller</h1>
+            <div id="status" class="status disconnected">Disconnected</div>
+            <a href="/simulator" target="_blank" class="simulator-link">Open Simulator</a>
+
+            <div class="log-window" id="log-window">
+                <div class="log-entry system">System initialized...</div>
+            </div>
+        </div>
+
+        <div class="joystick-container">
+            <div class="joystick" id="joystick-right">
+                <div class="stick"></div>
+            </div>
+            <div class="label">Pitch / Roll</div>
+        </div>
+    </div>
+
+    <div id="landscape-warning">
+        <div class="icon" style="font-size: 3rem; margin-bottom: 1rem;">⟳</div>
+        <p>This controller requires Landscape Mode.</p>
+        <p>Please rotate your device.</p>
+        <button id="rotate-btn" class="rotate-button">Tap to Rotate</button>
+    </div>
+
+    <!-- Fullscreen Button -->
+    <div class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+        ⛶
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/index.js"></script>
+</body>
+
+</html>

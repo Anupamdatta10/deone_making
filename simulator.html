@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/simulator.css">
+</head>
+
+<body>
+    <div class="simulator-container">
+        <div class="header">
+            <h1>🚁 Drone Flight Simulator</h1>
+            <div class="controls-info">
+                <div id="connection-status" class="status disconnected">Disconnected</div>
+                <a href="/" class="controller-link">Open Controller</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- 3D Canvas -->
+            <div class="canvas-container">
+                <canvas id="droneCanvas"></canvas>
+                <div class="canvas-overlay">
+                    <div class="crosshair"></div>
+                </div>
+            </div>
+
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <div class="telemetry-section">
+                    <h3>Telemetry Data</h3>
+                    <div class="telemetry-grid">
+                        <div class="telemetry-item">
+                            <span class="label">Altitude:</span>
+                            <span class="value" id="altitude">0.0 m</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="label">Speed:</span>
+                            <span class="value" id="speed">0.0 m/s</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="label">Pitch:</span>
+                            <span class="value" id="pitch">0°</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="label">Roll:</span>
+                            <span class="value" id="roll">0°</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <span class="label">Yaw:</span>
+                            <span class="value" id="yaw">0°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="motor-section">
+                    <h3>Motor Values</h3>
+                    <div class="motor-grid">
+                        <div class="motor-item">
+                            <div class="motor-label">M1 (FR)</div>
+                            <div class="motor-bar">
+                                <div class="motor-fill" id="motor1-bar"></div>
+                            </div>
+                            <div class="motor-value" id="motor1-value">0</div>
+                        </div>
+                        <div class="motor-item">
+                            <div class="motor-label">M2 (RR)</div>
+                            <div class="motor-bar">
+                                <div class="motor-fill" id="motor2-bar"></div>
+                            </div>
+                            <div class="motor-value" id="motor2-value">0</div>
+                        </div>
+                        <div class="motor-item">
+                            <div class="motor-label">M3 (RL)</div>
+                            <div class="motor-bar">
+                                <div class="motor-fill" id="motor3-bar"></div>
+                            </div>
+                            <div class="motor-value" id="motor3-value">0</div>
+                        </div>
+                        <div class="motor-item">
+                            <div class="motor-label">M4 (FL)</div>
+                            <div class="motor-bar">
+                                <div class="motor-fill" id="motor4-bar"></div>
+                            </div>
+                            <div class="motor-value" id="motor4-value">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructions-section">
+                    <h3>Instructions</h3>
+                    <ul>
+                        <li>Open the controller in another tab/device</li>
+                        <li>Left stick: Throttle (up/down) & Yaw (rotation)</li>
+                        <li>Right stick: Pitch (forward/back) & Roll (left/right)</li>
+                        <li>Watch the drone respond in real-time!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/simulator.js"></script>
+</body>
+
+</html>
