@@ -26,9 +26,9 @@ WebServer server(80);
 #define PWM_3  27
 
 // Motor 4
-#define BIN1_2 13   // CHANGED from 12 → 13 (safe)
+#define BIN1_2 12   // CHANGED from 12 → 13 (safe)
 #define BIN2_2 22
-#define PWM_4  16
+#define PWM_4  13
 
 // ---------------- MPU6050 ----------------
 #define SDA_PIN 21
